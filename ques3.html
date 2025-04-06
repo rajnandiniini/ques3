@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Palindrome Checker</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    #result {
+      margin-top: 10px;
+      padding: 5px 10px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Enter to check if palindrome</h2>
+    <input id="num" placeholder="Enter number">
+    <button onclick="check()">Check</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function check() {
+      var num = document.getElementById("num").value;
+      var reversed = num.split("").reverse().join("");
+      var result = document.getElementById("result");
+
+      if (num === reversed) {
+        result.textContent = "Palindrome";
+        result.style.backgroundColor = "green";
+      } else {
+        result.textContent = "Not a palindrome";
+        result.style.backgroundColor = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
